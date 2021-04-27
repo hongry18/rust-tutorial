@@ -8,10 +8,12 @@ use tasks::Task;
 
 use std::path::PathBuf;
 
+use std::env::current_dir;
+
 fn find_default_journal_file() -> Option<PathBuf> {
-    let mut path = PathBuf::from(
-        r"/Users/hongry/workspace/work/individual/rust-by-example/rust-learning-path/rust-create-command-line-program/rusty-journal",
-    );
+    let cur_dir = current_dir();
+    let mut path = PathBuf::new();
+    path.push(cur_dir.unwrap());
     path.push(".rusty-journal.json");
     Some(path)
 }
@@ -32,4 +34,9 @@ fn main() -> anyhow::Result<()> {
         Done { position } => tasks::complete_task(journal_file, position),
     }?;
     Ok(())
+}
+
+#[test]
+fn printDir() {
+    println!("{:?}", find_default_journal_file());
 }
