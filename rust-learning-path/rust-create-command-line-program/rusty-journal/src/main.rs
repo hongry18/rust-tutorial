@@ -9,11 +9,16 @@ use tasks::Task;
 use std::path::PathBuf;
 
 use std::env::current_dir;
+use std::io::ErrorKind;
 
 fn find_default_journal_file() -> Option<PathBuf> {
-    let cur_dir = current_dir();
+    let cur_dir = match current_dir() {
+        Ok(path) => path,
+        Err(_) => panic!("current dir not found"),
+    };
+
     let mut path = PathBuf::new();
-    path.push(cur_dir.unwrap());
+    path.push(cur_dir);
     path.push(".rusty-journal.json");
     Some(path)
 }
