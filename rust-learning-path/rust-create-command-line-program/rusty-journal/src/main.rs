@@ -9,7 +9,6 @@ use tasks::Task;
 use std::path::PathBuf;
 
 use std::env::current_dir;
-use std::io::ErrorKind;
 
 fn find_default_journal_file() -> Option<PathBuf> {
     let cur_dir = match current_dir() {
@@ -42,6 +41,6 @@ fn main() -> anyhow::Result<()> {
 }
 
 #[test]
-fn printDir() {
+fn print_dir() {
     println!("{:?}", find_default_journal_file());
 }
