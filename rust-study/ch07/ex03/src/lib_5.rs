@@ -1,6 +1,6 @@
 mod back_of_house {
     pub struct Breakfast {
-        //pub toast: String,
+        // pub toast: String,
         toast: String,
         seasonal_fruit: String,
     }
@@ -12,6 +12,13 @@ mod back_of_house {
                 seasonal_fruit: String::from("peaches"),
             }
         }
+
+        // pub fn summer(toast: &str) -> Breakfast {
+        //     Breakfast {
+        //         toast: String::from(toast),
+        //         seasonal_fruit: String::from("peaches"),
+        //     }
+        // }
 
         pub fn get_toast(&self) -> String {
             self.toast
@@ -28,7 +35,7 @@ pub fn eat_at_restaurant() {
     let mut meal = back_of_house::Breakfast::summer("Rye");
     // Change our mind about what bread we'd like
 
-    // meal.toast = String::from("Wheat");
+    // meal.toast = String::from("Waht");
     meal.set_toast(String::from("Wheat"));
     // println!("I'd like {} toast please", meal.toast);
     println!("I'd like {} toast please", meal.get_toast());
