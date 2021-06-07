@@ -1,4 +1,5 @@
 fn main() {
+<<<<<<< HEAD
     ex01();
     ex02();
     ex03();
@@ -74,3 +75,18 @@ fn ex04() {
 
     println!("{:?}", row)
 }
+=======
+    println!("Hello, world!");
+
+    let s1 = String::from("s1");
+    let s2 = String::from("s2");
+
+    println!("s3 is {}", sum_str_plus_operator(&s1, &s2));
+    println!("s3 is {}", sum_str_plus_operator(&s1, &s2));
+
+}
+
+fn sum_str_plus_operator(x: &String, y: &String) -> String {
+    return "sum: ".to_string() + x + y
+}
+>>>>>>> d317dfcc665da8362a7e7f31b046b63cf30e6217

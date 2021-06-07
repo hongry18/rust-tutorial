@@ -1,4 +1,4 @@
-mod front_of_houest {
+mod front_of_house {
     mod hosting {
         fn add_to_waitlist() {
             println!("add_to_waitlist")
