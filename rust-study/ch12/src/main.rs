@@ -1,11 +1,21 @@
 use std::{env, process};
 
-use minigrep::Config;
+// use minigrep::Config;
+
+mod lib;
+
+// use crate::lib::minigrep::Config;
+// use crate::lib::minigrep;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    let config = Config::new(&args).unwrap_or_else(|err| {
+    let config = lib::Config::new(&args).unwrap_or_else(|err| {
+        println!("Problem parsing arguments: {}", err);
+        process::exit(1);
+    });
+
+    let config = lib::minigrep::Config::new(&args).unwrap_or_else(|err| {
         println!("Problem parsing arguments: {}", err);
         process::exit(1);
     });

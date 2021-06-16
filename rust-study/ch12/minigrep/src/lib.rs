@@ -1,5 +1,4 @@
-use std::env;
-use std::{error::Error, fs};
+use std::{env,error::Error, fs};
 
 #[cfg(test)]
 mod tests {
