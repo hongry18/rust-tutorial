@@ -64,3 +64,26 @@ fn call_with_different_values() {
 
     assert_eq!(v2, 2);
 }
+
+#[test]
+fn closer_capture() {
+    let x = 4;
+
+    let equal_to_x = |z| z == x;
+
+    let z1 = equal_to_x(4);
+    let z2 = equal_to_x(5);
+
+    println!("z1 is {}, z2 is {}", z1, z2);
+}
+
+#[test]
+fn closer_capture_2() {
+    // let x = 4;
+
+    // fn equal_to_x(z: i32) -> bool { z == x }
+
+    // let y = 4;
+
+    // assert!(equal_to_x(y));
+}
